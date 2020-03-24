@@ -33,15 +33,6 @@ cat /sys/class/fc_host/host?/port_name
 fi
 echo ""
 
-echo -e "-------------------------------Oracle DB Instances---------------------------"
-if id oracle >/dev/null 2>&1; then
-/bin/ps -ef|grep pmon
-then
-else
-echo "oracle user does not exist on $(hostname)"
-fi
-echo ""
-
 if (( $(cat /etc/*-release | grep -w "Oracle|Red Hat|CentOS|Fedora" | wc -l) > 0 ))
 then
 echo -e "-------------------------------Package Updates-------------------------------"
